@@ -1,13 +1,9 @@
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { resolve } from 'path';
+import CopyPlugin from "copy-webpack-plugin";
 
 export const plugins = [
-    new CopyWebpackPlugin({
+    new CopyPlugin({
         patterns: [
-            {
-                from: resolve(__dirname, 'assets'), // Chemin de vos fichiers statiques
-                to: 'assets', // Destination dans /dist
-            },
+            { from: "assets", to: "assets", noErrorOnMissing: true },
         ],
     }),
 ];
